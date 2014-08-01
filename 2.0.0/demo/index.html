@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Ghostscroll的demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.0/css/dpl/base-min.css">
+    <style>
+        #demo {
+            border: 3px solid #333;
+            width: 300px;
+            height: 400px;
+            position: relative;
+        }
+    </style>
+<script>var S = KISSY;S.config({packages:[{name:"kg",path:"http://g.tbcdn.cn/kg/",charset:"utf-8",ignorePackageNameInUri:true}]});if (S.Config.debug){var srcPath = "../";S.config({packages:[{name:"kg/ghostscroll/2.0.0",path:srcPath,charset:"utf-8",ignorePackageNameInUri:true}]});}</script></head>
+<body>
+<h2>Ghostscroll的demo</h2>
+
+<div id="demo">
+    <div class="a">
+        <p>这是很长很长的内容</p>
+        <p>请把鼠标放在我上面，等滚动条出现</p>
+        <img src="http://img.la/300x600" alt="">
+        <p>还是很长</p>
+        <p>呵呵</p>
+        <p>呵呵</p>
+        <img src="http://img.la/300x400" alt="">
+        <p>鼠标移开，滚动条会消失</p>
+    </div>
+</div>
+
+
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/ghostscroll",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/ghostscroll/2.0.0/index', function (S, Ghostscroll) {
+          new Ghostscroll({
+            el: '#demo'
+          });
+    })
+</script>
+</body>
+</html>
